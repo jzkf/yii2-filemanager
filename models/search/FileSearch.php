@@ -108,22 +108,22 @@ class FileSearch extends FileModel
             }
         }
 
-        $query->andFilterWhere(['like', 'unique_id', trim($this->unique_id)])
-            ->andFilterWhere(['like', 'storage', trim($this->storage)])
-            ->andFilterWhere(['like', 'origin_name', trim($this->origin_name)])
-            ->andFilterWhere(['like', 'object_name', trim($this->object_name)])
-            ->andFilterWhere(['like', 'base_url', trim($this->base_url)])
-            ->andFilterWhere(['like', 'path', trim($this->path)])
-            ->andFilterWhere(['like', 'url', trim($this->url)])
-            ->andFilterWhere(['like', 'mime_type', trim($this->mime_type)])
-            ->andFilterWhere(['like', 'extension', trim($this->extension)])
-            ->andFilterWhere(['like', 'cover_url', trim($this->cover_url)])
-            ->andFilterWhere(['like', 'alt', trim($this->alt)])
-            ->andFilterWhere(['like', 'title', trim($this->title)])
-            ->andFilterWhere(['like', 'tags', trim($this->tags)])
-            ->andFilterWhere(['like', 'md5', trim($this->md5)])
-            ->andFilterWhere(['like', 'sha1', trim($this->sha1)])
-            ->andFilterWhere(['like', 'upload_ip', trim($this->upload_ip)]);
+        $query->andFilterWhere(['like', 'unique_id', $this->unique_id])
+            ->andFilterWhere(['like', 'storage', $this->storage])
+            ->andFilterWhere(['like', 'origin_name', $this->origin_name])
+            ->andFilterWhere(['like', 'object_name', $this->object_name])
+            ->andFilterWhere(['like', 'base_url', $this->base_url])
+            ->andFilterWhere(['like', 'path', $this->path])
+            ->andFilterWhere(['like', 'url', $this->url])
+            ->andFilterWhere(['like', 'mime_type', $this->mime_type])
+            ->andFilterWhere(['like', 'extension', $this->extension])
+            ->andFilterWhere(['like', 'cover_url', $this->cover_url])
+            ->andFilterWhere(['like', 'alt', $this->alt])
+            ->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'tags', $this->tags])
+            ->andFilterWhere(['like', 'md5', $this->md5])
+            ->andFilterWhere(['like', 'sha1', $this->sha1])
+            ->andFilterWhere(['like', 'upload_ip', $this->upload_ip]);
 
         // 缓存结果（5分钟）
         if ($useCache && \Yii::$app->cache) {
